@@ -63,13 +63,49 @@ int main(){
         cout<<Tcount<<endl;
         Tcount =0;
         count =0;
-        counting = false;
+        counting = false;   
     }
+    return 0;
 }
-/**/
-//Programa E Aula 1
+
+//Programa E Aula 1 
+/*Tabs de l ate r (inclusivo)
+  cursor em pos-th
+    Acoes:
+    Esquerda ou Direita
+    MaxEsq ou MaxDir
+    DelEsq ou DelDir
+
+    printar segundos
+  */
 #include<bits/stdc++.h>
 #include<string>
 
 using namespace std;
 int main(){
+    int v[4];
+    for(int i=0; i<4; i++) cin>>v[i];
+    int a=1, b=v[0];       //a= menor, b= maior
+    int segundos = 0;
+    int pos = v[1], l=v[2], r=v[3];
+    while(a != l && b != r){
+        if(pos-l< r-pos && l != a){       //escolhe esquerda primeiro
+            if(1+l < pos-l) segundos += l+2;    //maxEsq
+            else segundos += pos - l+1;       //1 por 1
+            cout<< segundos << endl;
+            cout<<"em cima";
+            a = l;
+            pos = l;
+        }
+        else{                   //escolhe direita primeiro
+            if(b-r+1 < r - pos && b != r) segundos += b-r+2;
+            else segundos += r-pos +1;
+            cout<<segundos<< endl;
+            cout<<"embaixo";
+            b=r;
+            pos =r;
+        }
+    }
+    //cout<<segundos;
+    return 0;
+}
