@@ -1,3 +1,7 @@
+/*Dicas:
+    site cppreference.com 
+
+ */
 //Problema A
 #include<bits/stdc++.h>
 using namespace std;
@@ -14,3 +18,6 @@ int main(){
     cout<< n;
     return 0;
 }
+
+//Problema B
+//Usar Hash?? Dicionario
