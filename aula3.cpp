@@ -22,7 +22,7 @@
     v[0] = 1; // ou v[i] tambem funciona
 
     É recomendável utilizar as estruturas da STL (set, map, vector, multiset, ou até mesmo list se quiser usar lista ligada).
- 
+*/ 
 //Problema A
 #include<bits/stdc++.h>
 using namespace std;
@@ -71,7 +71,7 @@ int main(){
 //encontrar o caminho e dps fazer ida e volta?
 //considerar casos em que o numero eh impar para nao acabar fora do quadrado
 //tem que ter exatamente k movimentos por isso no exemplo eh 1
-*/
+
 //Problema E
 
 //NAO FUNCIONA!!
