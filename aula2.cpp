@@ -1,5 +1,5 @@
 //Aula 2
-
+/**/
 //Problema A
 #include<bits/stdc++.h>
 using namespace std;
@@ -33,6 +33,37 @@ int main(){
     int b = x[3] - x[1];
     int c = x[3] - x[2];
     printf("%d %d %d\n", a, b, c);
+    return 0;
+}
+
+//Problema C
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int t, x, y, a, b;
+    cin>>t;
+    int resp[t] = {-1};
+    for(int i = 0; i<t; i++){
+        cin>> x >>y >> a >> b;
+        for(int j=0; j<y; j++){
+            if (x==y){ 
+                //cout<<j<<endl;
+                resp[i]=j;
+                cout<<j<<"<"<<endl;
+                break;
+            }
+            if(x>=y){
+                //cout<< -1 << endl;
+                resp[i]= -1;
+                cout<<-1<<"<"<<endl;
+                break;
+            }
+            x+=a;
+            y-=b;
+        }
+    }
+    for(int i=0; i<t;i++) cout<<resp[i]<<endl;
     return 0;
 }
 
