@@ -22,7 +22,7 @@
     v[0] = 1; // ou v[i] tambem funciona
 
     É recomendável utilizar as estruturas da STL (set, map, vector, multiset, ou até mesmo list se quiser usar lista ligada).
- */
+ 
 //Problema A
 #include<bits/stdc++.h>
 using namespace std;
@@ -68,4 +68,41 @@ int main(){
 } 
 
 //Problema D
-//
+//encontrar o caminho e dps fazer ida e volta?
+//considerar casos em que o numero eh impar para nao acabar fora do quadrado
+//tem que ter exatamente k movimentos por isso no exemplo eh 1
+*/
+//Problema E
+
+//NAO FUNCIONA!!
+#include<bits/stdc++.h>
+#include <functional>
+using namespace std;
+
+int main(){
+    int n;
+    long long int numeros[n];
+    long long int resposta[n];
+    cin>>n;
+    for(int i = 0; i<n; i++) cin>>numeros[i];
+    sort(numeros, numeros+n);
+    for(int j=0; j<n; j++){
+        if(j==0) resposta[0] = numeros[n-1];
+        else{
+            for(int k = 0; k<n; k++){
+                if(numeros[k]==resposta[j-1]/3){
+                    resposta[j] = numeros[k];
+                    break;
+                }
+                else if(numeros[k] == resposta[j-1]*2){
+                    resposta[j] = numeros[k];
+                    break;
+                }
+            }   
+        }
+    }
+    //cout<<"oi"<<endl;
+    cout<< resposta[0];
+    for(int z=0; z<n; z++) printf("%Ld ", resposta[z]); 
+    return 0;
+}
