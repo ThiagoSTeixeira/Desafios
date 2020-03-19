@@ -48,7 +48,6 @@ int main(){
 #include<bits/stdc++.h>
 using namespace std;
 
-//Utilizar 2 ponteiros
 int main(){
     int n, maxp=0, j=0;
     cin>>n;
@@ -61,5 +60,40 @@ int main(){
         i = j;
     }
     cout<<maxp;
+    return 0;
 }
 
+/*Problema C
+    -n monstros em fileira de 1 a n (1<= n <= 2*10^5)
+    -monstro[i] tem h[i] de hp (1<= h[i] <= 10^9)
+    -ataque = a, ataque do oponente
+    -compete com o oponente para matar os monstros
+    -dar o last hit = 1 ponto, caso contrario 0 pontos
+    -k = qntidade de vezes que o ataque do oponente pode ser pulado
+    -(1<= a,b,k <= 10^9)
+*/
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int n, a, b, k;
+    int monstro[n];
+    cin>>n>>a>>b>>k;
+    for(int i=0; i<n; i++) cin>>monstro[i];
+    int rst, atq = a+b, total, result;
+
+    for(int i=0; i<n; i++){
+        rst = monstro[i]%atq;
+        //cout<<rst<<endl;
+        if(rst>a){ 
+            total= ceil(rst/a);
+            if(total<=k+1) k -= total;
+            else break;
+        }
+        result = i;
+        if(n==1) result = 1;
+        if(k<=0) break;
+    }
+    cout<< result;
+    return 0;
+}
