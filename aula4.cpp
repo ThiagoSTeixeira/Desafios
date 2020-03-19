@@ -77,23 +77,21 @@ using namespace std;
 
 int main(){
     int n, a, b, k;
-    int monstro[n];
     cin>>n>>a>>b>>k;
-    for(int i=0; i<n; i++) cin>>monstro[i];
-    int rst, atq = a+b, total, result;
-
-    for(int i=0; i<n; i++){
-        rst = monstro[i]%atq;
-        //cout<<rst<<endl;
-        if(rst>a){ 
-            total= ceil(rst/a);
-            if(total<=k+1) k -= total;
-            else break;
-        }
-        result = i;
-        if(n==1) result = 1;
-        if(k<=0) break;
+    int monstro[n];
+    int total = 0;
+    for(int i=0; i<n; i++){ 
+        cin>>monstro[i]; 
+        monstro[i] %= a+b;
+        if(monstro[i] == 0) monstro[i] = a+b;
+        monstro[i]= ((monstro[i] + a-1) / a) - 1;   //vetor de custos
     }
-    cout<< result;
+    sort(monstro, monstro+n);   //Mata os menos custosos primeiro
+    for(int i=0; i<n; i++){
+        if(k-monstro[i] < 0) break;
+        total++;
+        k -= monstro[i];
+    }
+    cout<< total;
     return 0;
 }
