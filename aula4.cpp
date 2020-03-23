@@ -95,3 +95,26 @@ int main(){
     cout<< total;
     return 0;
 }
+
+/*Problema D
+    -n segmentos de numeros [l, r] (podem ser iguais, dentro de outros, etc.)
+    -encontrar qual segmento tirar para ter a maior intersecao possivel
+    -2 <= n <= 3*10^5
+    -0 <= l <= r <= 10^9
+    -Printar o tamanho da maior intercessao possivel
+*/
+#include<bits/stdc++.h>
+using namespace std;
+//percorrer os elementos e encontrar o maior com ate um sem bater
+
+int main(){
+    int n;
+    cin>>n;
+    vector<int> l(n);
+    vector<int> r(n);
+    for(int i=0; i<n; i++) scanf("%d %d", &l[i], &r[i]);
+
+    for(int i=0; i<n; i++){
+        for(int j=0;)
+    }
+    
