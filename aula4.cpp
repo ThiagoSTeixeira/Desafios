@@ -105,16 +105,32 @@ int main(){
 */
 #include<bits/stdc++.h>
 using namespace std;
-//percorrer os elementos e encontrar o maior com ate um sem bater
+
+//resposta retirada do editorial do codeforces! (n entendi fdc)
+const int INF = int(1e9);   //infinito
 
 int main(){
     int n;
     cin>>n;
-    vector<int> l(n);
-    vector<int> r(n);
-    for(int i=0; i<n; i++) scanf("%d %d", &l[i], &r[i]);
-
-    for(int i=0; i<n; i++){
-        for(int j=0;)
-    }
+    int l[n+1], r[n+1];
+    int prl[n+1], prr[n+1], suf[n+1], pos[n+1];
     
+    for(int i=0; i<n; i++) scanf("%d %d", &l[i], &r[i]);
+    prl[0] = suf[n]= 0;
+    prr[0] = pos[n] = INF;
+    
+    for(int i=0; i<n; i++){
+        prl[i+1] = max(prl[i], l[i]);
+        prr[i+1] = min(prr[i], r[i]);
+    }
+
+    for (int i = n-1; i>=0; i--){
+        suf[i] = max(suf[i+1], l[i]);
+        pos[i] = min(pos[i+1], r[i]);
+    }
+    int resp = 0;
+    for(int i=0; i<n; i++) resp = max(resp, min(prr[i], pos[i+1])- max(prl[i], suf[i+1]));
+    cout<<resp;
+    return 0;
+}
+
