@@ -12,12 +12,13 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+//A resposta x-1 e 1 sempre funciona!!!!!!!!!
 int main(){
     int t;
     cin>>t;
     vector<int> x(t);
-    for (int i=0; i++; i<t) scanf("%d", &x[i]);
-
+    for (int i=0; i<t; i++) cin>>x[i];
+    for (int i=0; i<t; i++) printf("%d %d\n", x[i]-1, 1);
     return(0);
 }
 /*Problema B
