@@ -25,7 +25,24 @@ int main(){
     -array a de tamanho n (1 <= n <= 10^5 && 1 <= a <= 10^9)
     -a soma dos n's nao excede 10^5
     -qual sera a longest increasing subsequence de um array de n copias de a
-
+    -t test cases
 */
+#include<bits/stdc++.h>
+using namespace std;
 
+int main(){
+    int t, n;
+    cin>>t;
+    int resp[t];
+    for (int i=0; i<t; i++){
+        cin>>n;
+        vector<int> seq(n);
+        for(int j=0; j<n; j++) scanf("%d", &seq[j]);
+        sort(seq.begin(), seq.end());
+        seq.erase(unique(seq.begin(), seq.end()), seq.end());
+        resp[i] = seq.size();
+    }
+    for(int i=0; i<t; i++) cout<<resp[i]<<endl;
+    return 0;
+}
 
