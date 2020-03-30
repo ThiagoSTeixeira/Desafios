@@ -46,3 +46,52 @@ int main(){
     return 0;
 }
 
+/*Problema C
+    -N niveis (1 <= N <= 100)
+    -Hi HealthPacks
+    -Ei Inimigos
+    -Ai municao
+    -1 <= Hi,Ei,AI <= 10^4
+    -Todo nivel eh diferente
+    -Printar o nvl mais facil e o mais dificil (1 soh se N=1)
+*/
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int N, Hi, Ei, Ai;
+    int MaxV=-100000, MinV=100000, MaxL = 0, MinL=0;
+    cin>>N;
+    if(N==1){
+        cout<<"Easiest and Hardest is level 1";
+        return 0;
+    }
+
+}
+
+/*Enunciado de merda, codigo resolve o problem errado
+//prioridade Hi=3, Ei=2, Ai=1
+
+int main(){
+    int N, Hi, Ei, Ai;
+    int MaxV=-100000, MinV=100000, MaxL = 0, MinL=0;
+    cin>>N;
+    if(N==1){
+        cout<<"Easiest and Hardest is level 1";
+        return 0;
+    }
+    for(int i=0; i<N; i++){
+        scanf("%d %d %d", &Hi, &Ei, &Ai);
+        if(3*Hi - 2*Ei + Ai > MaxV){
+            MaxV = 3*Hi - 2*Ei + Ai;
+            MaxL = i;
+        }
+        if(3*Hi - 2*Ei + Ai < MinV){
+            MinV = 3*Hi - 2*Ei + Ai;
+            MinL = i;
+        }
+    }
+    printf("Easiest is level %d \nHardest is level %d", MaxL+1, MinL+1);
+    return 0;
+}
+*/
