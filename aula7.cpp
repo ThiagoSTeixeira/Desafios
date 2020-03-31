@@ -8,7 +8,7 @@
         -resolver na mao os casos de 2 a 10.
         -tentar fazer em 1 linha talvez?
         -ver a aula gravada
-
+*/
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -26,7 +26,7 @@ int main(){
     -a soma dos n's nao excede 10^5
     -qual sera a longest increasing subsequence de um array de n copias de a
     -t test cases
-
+*/
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -76,16 +76,16 @@ int main(){
     int N;
     cin>>N;
     //struct level niveis[N];
-    vector<level> niveis(N);
+    vector<level> niveis(N*2);
     if(N==1){
         cout<<"Easiest and Hardest is level 1";
         return 0;
     }
 
     for(int i=0; i<N; i++){
-        scanf("%d %d %d", &niveis[i].Hi, &niveis[i].Ei, &niveis[i].Ai);
-        //printf("%d %d %d\n", niveis[i].Hi, niveis[i].Ei, niveis[i].Ai);
         niveis[i].indice = i+1;
+        scanf("%d %d %d", &niveis[i].Hi, &niveis[i].Ei, &niveis[i].Ai);
+        printf("\n%d %d %d\n", niveis[i].Hi, niveis[i].Ei, niveis[i].Ai);
     }
     cout<<"sai do for";
     sort(niveis.begin(), niveis.end(), ordenaHi);
