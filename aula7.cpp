@@ -8,7 +8,7 @@
         -resolver na mao os casos de 2 a 10.
         -tentar fazer em 1 linha talvez?
         -ver a aula gravada
-*/
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -26,7 +26,7 @@ int main(){
     -a soma dos n's nao excede 10^5
     -qual sera a longest increasing subsequence de um array de n copias de a
     -t test cases
-*/
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -57,17 +57,73 @@ int main(){
 */
 #include<bits/stdc++.h>
 using namespace std;
-
+//Eh possivel criar um array de structs
+struct level{
+    int indice;
+    int Hi;
+    int Ei;
+    int Ai;
+};
+bool ordenaHi(level i1, level i2){
+    //ordena por Hi em ordem decrescente
+    return i1.Hi > i2.Hi;
+}
+bool ordenaEi(level i1, level i2){
+    //ordena por Ei em ordem crescente
+    return i1.Ei < i2.Ei;
+}
 int main(){
-    int N, Hi, Ei, Ai;
-    int MaxV=-100000, MinV=100000, MaxL = 0, MinL=0;
+    int N;
     cin>>N;
+    //struct level niveis[N];
+    vector<level> niveis(N);
     if(N==1){
         cout<<"Easiest and Hardest is level 1";
         return 0;
     }
 
+    for(int i=0; i<N; i++){
+        scanf("%d %d %d", &niveis[i].Hi, &niveis[i].Ei, &niveis[i].Ai);
+        //printf("%d %d %d\n", niveis[i].Hi, niveis[i].Ei, niveis[i].Ai);
+        niveis[i].indice = i+1;
+    }
+    cout<<"sai do for";
+    sort(niveis.begin(), niveis.end(), ordenaHi);
+ //--------------mais facil---------------//
+    int j=0;
+    vector<level> empatesHi;
+    while(niveis[j].Hi==niveis[0].Hi){
+        empatesHi.push_back(niveis[j]);
+        j++;
+    }
+
+    sort(empatesHi.begin(), empatesHi.end(), ordenaEi);
+    j=0;
+    int maxAi = -1, lvMaisFacil;
+
+    while(empatesHi[j].Ei== niveis[0].Ei){
+        if(empatesHi[j].Ai>maxAi) lvMaisFacil = empatesHi[j].indice;
+    }
+ //--------------mais dificil---------------//
+    int i=N-1;
+    vector<level> menosvidas;
+    while(niveis[i].Hi==niveis[N-1].Hi){
+        menosvidas.push_back(niveis[i]);
+        i--;
+    }
+    sort(menosvidas.begin(), menosvidas.end(), ordenaEi);
+    i=menosvidas.size()-1;
+    int minAi = 10001, lvMaisDificil;
+    while(menosvidas[i].Ei== menosvidas[menosvidas.size()-1].Ei){
+        if(menosvidas[i].Ai<minAi) lvMaisDificil=menosvidas[i].indice;
+    }
+
+    printf("Easiest is level %d \nHardest is level %d", lvMaisFacil, lvMaisDificil);
+    return 0;
 }
+
+
+
 
 /*Enunciado de merda, codigo resolve o problem errado
 //prioridade Hi=3, Ei=2, Ai=1
