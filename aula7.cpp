@@ -73,18 +73,21 @@ bool ordenaEi(level i1, level i2){
     return i1.Ei < i2.Ei;
 }
 int main(){
-    int N;
+    int N, hi, ei, ai;
     cin>>N;
     //struct level niveis[N];
-    vector<level> niveis(N*2);
+    vector<level> niveis(N);
     if(N==1){
         cout<<"Easiest and Hardest is level 1";
         return 0;
     }
 
-    for(int i=0; i<N; i++){
+    for(int i=0; i<niveis.size(); i++){
         niveis[i].indice = i+1;
-        scanf("%d %d %d", &niveis[i].Hi, &niveis[i].Ei, &niveis[i].Ai);
+        scanf("%d %d %d", &hi, &ei, &ai);
+        niveis[i].Hi=hi;
+        niveis[i].Ei=ei;
+        niveis[i].Ai=ai;
         printf("\n%d %d %d\n", niveis[i].Hi, niveis[i].Ei, niveis[i].Ai);
     }
     cout<<"sai do for";
