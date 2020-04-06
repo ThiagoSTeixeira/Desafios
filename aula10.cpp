@@ -12,7 +12,7 @@ using namespace std;
 int main(){
     long long int n, resultado;
     cin>>n;
-    resultado = ((n+1)*n/2) - (n-1);
+    resultado = ((n+1)*n /2) - (n-1);
     cout<<resultado;
     return 0;
 }
