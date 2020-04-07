@@ -62,3 +62,39 @@ int main(){
     }
     return 0;
 }
+/*Problema B
+    -4 times A, B, C e D. Ganha quem resolver mais
+    -Em empates ganha o time em ordem alfabetica(B vs C = B)
+    -n participantes, participante 1 vai para A, 2 para B e assim por diante em loop (4<=n<=10^5)
+    -a[i] = numero de problemas que cada participante resolveu (0<=a[i]<=10^4)
+*/
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int n, temp;
+    long long int result[4];
+    result[0]=result[1]=result[2]=result[3]=0;
+    cin>>n;
+    int probs[n];
+    for (int i=0; i<n; i++){
+        cin>>temp;
+        result[i%4] += temp;
+    }
+    int max=-1, grp;
+    for(int i=0; i<4; i++){
+        if(result[i]>max){
+            max=result[i];
+            grp=i;
+        }
+    }
+    if(grp==0) cout<<'A';
+    if(grp==1) cout<<'B';
+    if(grp==2) cout<<'C';
+    if(grp==3) cout<<'D';
+    return 0;
+}
+
+/*Problema C
+
+*/
