@@ -96,5 +96,37 @@ int main(){
 }
 
 /*Problema C
-
+    -n empregados (1<= n <= 2000)
+    -empregado tem 1 ou 0 gerentes(p[i]= gerente de i| p[i]=-1 se nao tiver)
+    -A eh superior de B se A eh gerente de B, ou gerente do gerente de B
+    -nao ha ciclos de gerencia
+    -separar em grupos de modo que nao haja um grupo com um superior de um membro
+    -minimo de grupos
 */
+#include<bits/stdc++.h>
+using namespace std;
+
+vector<int> infer[2000];
+int maxalt=-1;
+bool visitado[2000];
+
+void dfs(int p, int indice){
+    if(visitado[p]) return;
+    visitado[p] = true;
+    if(indice>maxalt) maxalt = indice;
+    for(auto x: infer[p])
+        dfs(x, indice+1);
+}
+
+int main(){
+    memset(visitado, false, sizeof(visitado));
+    int n, p;
+    cin>>n;
+    for(int i=1; i<=n; i++){    //usa o 0 como raiz global como na aula
+        cin>>p;
+        if(p == -1) infer[0].push_back(i);
+        else infer[p].push_back(i);
+    }
+    dfs(0, 0);
+    cout<<maxalt;
+}
