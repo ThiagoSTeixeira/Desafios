@@ -1,7 +1,7 @@
 //Arquivo de teste para funcoes, casos, problemas etc.
 #include<bits/stdc++.h>
 using namespace std;
-
+/*
 struct pessoas{
     int indice;
     int altura;
@@ -21,5 +21,12 @@ int main(){
     }
     sort(lista, lista+N, ordenaAlt);
     for(int i=0; i<N; i++) printf("%d", lista[i].altura);
+    return 0;
+}
+*/
+int main(){
+    int i = 1, j=2;
+    //cout<<i/j;
+    for(int i=0; i<5;i++) cout.flush()<<"Q "<<i<<endl;
     return 0;
 }
