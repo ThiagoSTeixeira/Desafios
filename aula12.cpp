@@ -28,5 +28,27 @@ int main(){
     return 0;
 }
 
+/*Problema B
+    -a1, a2
+    -k1, k2
+    -n
+
+    2 3
+    5 1
+    8
+    -printar max e min
+*/
+#include<bits/stdc++.h>
+using namespace std;
+int getMax(int a1, int a2, int k1, int k2, int n){
+    while(n>0){
+        
+    }
+}
+int main(){
+    int a1, a2, k1, k2, n;
+    cin>>a1>>a2>>k1>>k2>>n;
+    
+}
 
 
