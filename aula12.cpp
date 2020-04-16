@@ -65,5 +65,6 @@ int main(){
     }
     cout<<min<<" "<<maxi;    
 }
-
+/*Problema D
+*/
 

@@ -9,25 +9,27 @@
 using namespace std;
 
 int main(){
-    string entrada, palavra;
-    getline(cin, entrada);
-    istringstream ss(entrada);
-    while(ss){
-        ss>>palavra;
+    string palavra;
+    bool sussu=false;
+    //getline(cin, entrada);
+    //istringstream ss(entrada);
+    while(cin>>palavra){
+        //ss>>palavra;
         //cout<<palavra<<endl;
-        if (palavra.back() == '?'){
-            cout<<"7";
+        if(palavra == "Sussu" || palavra == "Sussu!"|| palavra == "Sussu.") sussu = true;
+        /*if (palavra.back() == '.' || palavra.back() == '!'){
+            cout<<"O cara é bom!"<<endl;
             return 0;
-        }
-        if(palavra == "Sussu" || palavra == "Sussu!"|| palavra == "Sussu."){
-            cout<<"AI SUSSU!";
-            return 0;
-        }
-        if (palavra.back() == '.' || palavra.back() == '!'){
-            cout<<"O cara é bom!";
-            return 0;
-        }
+        }*/
     }
-    cout<<"O cara é bom!";
+    if (palavra.back() == '?'){
+            cout<<"7"<<endl;
+            return 0;
+        }
+    if(sussu){
+        cout<<"AI SUSSU!"<<endl;
+        return 0;
+    }
+    cout<<"O cara é bom!"<<endl;
     return 0;
 }
