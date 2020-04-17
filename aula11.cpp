@@ -2,8 +2,8 @@
     Dicas:
         -Pessoal, pra quem ta fazendo a aula 11, o B e o C 
         não envolvem nada difícil, e o D e E envolvem grafos
-*/
 
+*/
 //Problema A
 #include<bits/stdc++.h>
 using namespace std;
@@ -77,4 +77,27 @@ int main(){
         else cout<<"No"<<endl;
     }
 }
+/*Problema C
+    -numero minimo de flips para ordenar
+    -igual ao numero de numeros invertidos
+    -vi na aula
+*/
+#include<bits/stdc++.h>
+using namespace std;
 
+int main(){
+    int N;
+    while(scanf("%d", &N) != EOF){
+        int resp = 0;
+        vector<int> arr(N);
+        for(int i=0; i<N; i++) cin>>arr[i];
+        for(int i=0; i<N; i++){
+            for(int j=i; j<N; j++){
+                if(arr[j]<arr[i]) resp++;
+            }
+        }
+        if(N>1) cout<<"Minimum exchange operations : "<<resp<<endl;
+        else cout<<"Minimum exchange operations : "<<0<<endl;
+    }
+    return 0;
+}
