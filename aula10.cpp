@@ -1,4 +1,5 @@
 //Aula 10
+
 /*Problema A
     -n membros recebem com baldes de 1 a n
     -balde 1 tem 1 pipoca, 2 tem 2 e assim por diante

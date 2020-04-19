@@ -31,3 +31,27 @@ int main(){
     cout<<"YES";
     return 0;
 }
+/*Problema B
+    -n cartas alinhadas com numeros diferentes (1 <= n, numero da carta <= 1000)
+    -cada um pega a mais alta de cada ponta
+    -determinar quem ganha
+*/
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int n, sereja, dima;
+    sereja = dima = 0;
+    cin>>n;
+    vector<int> cards(n);
+    for(int i=0; i<n;i++) cin>> cards[i];
+    int inicio = 0, fim = n-1;
+    for(int i=0; i<n; i++){
+        if(i%2==0) sereja += max(cards[inicio], cards[fim]);
+        else dima += max(cards[inicio], cards[fim]);
+        if(cards[fim]>cards[inicio]) fim--;
+        else inicio++;
+    }
+    cout<<sereja<<' '<<dima;
+    return 0;
+}
