@@ -22,7 +22,7 @@ int main(){
     -xadrez 8x8
     -torre e cavalo que nao conseguem se matar
     -descobrir o numero de jeitos de colocar um novo cavalo
-*/
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -55,4 +55,17 @@ int main(){
     }
     cout<<cont;
     return 0;
+}
+/*Problema C
+    -Descobrir a quantidade minima de dinheiro no cofre
+    -T test cases
+    -inteiros E e F, peso do cofre empty e filled (1<=E<=F<=10000)
+    -N tipos de moedas (1<=N<=500)
+    -P[i]=valor e W[i]=peso de cada moeda
+*/
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+
 }
