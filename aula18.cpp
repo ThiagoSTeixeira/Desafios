@@ -3,7 +3,7 @@
 /*Problema A
     -n ranks
     -d[i] anos pra subir de i pra i+1
-
+*/
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -22,7 +22,7 @@ int main(){
     -xadrez 8x8
     -torre e cavalo que nao conseguem se matar
     -descobrir o numero de jeitos de colocar um novo cavalo
-
+*/
 #include<bits/stdc++.h>
 using namespace std;
 
